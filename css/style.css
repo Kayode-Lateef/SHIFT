@@ -244,6 +244,27 @@ p{
     background-image: url(../img/dark-bg.jpg);
 }
 
+#sub-header{
+    background-image: url(../img/rectangle-overlay.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: relative;
+}
+
+#sub-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.1);
+    opacity: .9; 
+  }
+
+
+
 /********* Navbar ********/
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Futura', sans-serif;
