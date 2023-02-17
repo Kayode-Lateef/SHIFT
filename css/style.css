@@ -103,7 +103,7 @@ p{
 .section-title::before {
     position: absolute;
     content: "";
-    width: 200px;
+    width: 170px;
     height: 5px;
     left: 0;
     bottom: 0;
@@ -149,7 +149,7 @@ p{
 
 @keyframes section-title-run {
     0% {
-        left: 0;
+        left: 2px;
     }
 
     50% {
@@ -180,7 +180,7 @@ p{
 
 @keyframes section-title-run-sm {
     0% {
-        left: 0;
+        left: 2px;
     }
 
     50% {
@@ -361,9 +361,7 @@ p{
 #hero {
     width: 100%;
     height: 100vh;
-    padding: 150px 0px 150px 0px;
-    /* padding-left: 7% !important;
-    padding-right: 7% !important; */
+    padding: 80px 0px 150px 0px;
 }
 
 #hero h1 {
@@ -371,7 +369,7 @@ p{
     font-size: 38px;
 }
 
-#hero h3 {
+#hero h5 {
     color: #FFFFFF;
 }
 
@@ -474,8 +472,9 @@ p{
 }
 
 .about h1 {
-    color: #FFFFFF !important;
-    font-size: 28px;
+    color: #FFFFFF;
+    font-size: 26px;
+    letter-spacing: 2.5px;
 }
 
 @media (min-width: 992px) {
@@ -501,12 +500,14 @@ p{
 }
 
 .our-work h1 {
-    color: #FFFFFF !important;
-    font-size: 28px;
-
+    color: #FFFFFF;
+    font-size: 26px;
+    letter-spacing: 2.5px;
 }
 
 .our-work .btn {
+    display: none;
+    /* display: inline-block; */
     font-family: "Futura", sans-serif;
     font-size: 12px;
     font-weight: bold;
@@ -516,7 +517,6 @@ p{
     border-style: solid;
     border-image: linear-gradient(to left, #0088CC, #5F66AE, #5F66AE) 1;
     padding: 12px 30px;
-    display: inline-block;
     border-radius: 12px;
     text-transform: capitalize;
     letter-spacing: 0.5px;
@@ -535,6 +535,10 @@ p{
     overflow: hidden;
 }
 
+.our-work .item h4, .our-work .item small{
+    color: var(--primary);
+}
+
 .our-work-carousel .owl-dots {
     margin-top: 15px;
     display: flex;
@@ -550,7 +554,7 @@ p{
     height: 10px;
     background: #DDDDDD;
     border-radius: 50%;
-    transition: .5s;
+    transition: .2s;
 }
 
 .our-work-carousel .owl-dot.active {
@@ -569,7 +573,7 @@ p{
 }
 
 .our-work .our-work-carousel .owl-item.center .item {
-    box-shadow: 0 0 30px #DDDDDD;
+    box-shadow: 0 0 10px var(--primary);
 }
 
 .our-work .owl-nav {
@@ -620,6 +624,20 @@ p{
     .our-work .btn {
         font-size: 16px;
         padding: 12px 60px;
+        font-family: "Futura", sans-serif;
+        font-weight: bold;
+        margin-top: 30px;
+        color: #fff;
+        border-width: 8px;
+        border-style: solid;
+        border-image: linear-gradient(to left, #0088CC, #5F66AE, #5F66AE) 1;
+        display: inline-block;
+        border-radius: 12px;
+        text-transform: capitalize;
+        letter-spacing: 0.5px;
+        transition: all .3s;
+        overflow: hidden;
+        background: linear-gradient(92.75deg, rgba(0, 136, 204, 0.84) 0%, rgba(95, 102, 174, 0.67) 51.56%, rgba(95, 102, 174, 0.87) 100%);
     }
 }
 
@@ -683,8 +701,10 @@ p{
 }
 
 .podcasts h1 {
-    color: #FFFFFF !important;
-    font-size: 28px;
+    color: #FFFFFF;
+    font-size: 26px;
+    letter-spacing: 2.5px;
+
 }
 
 .podcasts .podcast-body {
@@ -702,14 +722,12 @@ p{
 
 .podcasts .podcast-description {
     color: #FFFFFF;
-    font-size: 18px;
     font-family: "Futura", sans-serif;
 }
 
 .podcasts .podcast-title {
     margin-left: 16px;
     font-size: 14px;
-
 }
 
 .podcasts i {
@@ -743,14 +761,25 @@ p{
 }
 
 .review h1 {
-    color: #FFFFFF !important;
-    font-size: 28px;
+    color: #FFFFFF;
+    font-size: 26px;
+    letter-spacing: 2.5px;
 }
 
 .review .item {
     position: relative;
     overflow: hidden;
 }
+
+.review .item p {
+    font-size: 16px;
+}
+
+.review .item h6 {
+    font-size: 16px;
+    color: var(--primary);
+}
+
 
 .review-carousel .owl-dots {
     margin-top: 15px;
@@ -916,13 +945,20 @@ footer {
 
 
 
-/* ------------------ */
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio {
     background-color: #1E1E1E;
 }
+
+.portfolio h1{
+    color: #FFFFFF;
+    font-size: 26px;
+    letter-spacing: 2.5px;
+}
+
 .portfolio #portfolio-flters {
     list-style: none;
     margin-bottom: 20px;
@@ -975,7 +1011,6 @@ footer {
     font-size: 18px;
     color: #fff;
     font-weight: 600;
-    color: #fff;
     margin-bottom: 0px;
   }
   
@@ -1010,3 +1045,102 @@ footer {
     opacity: 1;
   }
   
+
+  
+/*--------------------------------------------------------------
+# Portfolio Details
+--------------------------------------------------------------*/
+.breadcrumbs h2{
+    color: #FFFFFF;
+}
+.portfolio-details {
+    padding-top: 40px;
+  }
+  
+  .portfolio-details .portfolio-details-container {
+    position: relative;
+  }
+  
+  .portfolio-details .portfolio-details-carousel {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .portfolio-details .portfolio-details-carousel .owl-nav, .portfolio-details .portfolio-details-carousel .owl-dots {
+    margin-top: 5px;
+    text-align: left;
+  }
+  
+  .portfolio-details .portfolio-details-carousel .owl-dot {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd !important;
+  }
+  
+  .portfolio-details .portfolio-details-carousel .owl-dot.active {
+    background-color: #47b2e4 !important;
+  }
+  
+  .portfolio-details .portfolio-info {
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    bottom: -70px;
+    background: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  
+  .portfolio-details .portfolio-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .portfolio-details .portfolio-info ul {
+    list-style: none;
+    padding: 0;
+    font-size: 15px;
+  }
+  
+  .portfolio-details .portfolio-info ul li + li {
+    margin-top: 10px;
+  }
+  
+  .portfolio-details .portfolio-description {
+    padding-top: 50px;
+  }
+  
+  .portfolio-details .portfolio-description h2 {
+    width: 50%;
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .portfolio-details .portfolio-description p {
+    padding: 0 0 0 0;
+  }
+
+  @media (min-width: 992px) {
+    
+    #main{
+        padding-top: 80px;
+    }
+}
+  
+  @media (max-width: 768px) {
+    .portfolio-details .portfolio-description h2 {
+      width: 100%;
+    }
+    .portfolio-details .portfolio-info {
+      position: static;
+      margin-top: 30px;
+    }
+  }
