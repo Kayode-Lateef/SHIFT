@@ -267,6 +267,9 @@ p{
 
 
 /********* Navbar ********/
+.navbar-dark .navbar-nav{
+    margin-top: 20px;
+}
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Futura', sans-serif;
     position: relative;
@@ -326,9 +329,7 @@ p{
     }
 
     .navbar-dark .navbar-nav .nav-link {
-    
         margin-left: 50px;
-      
     }
 
     .sticky-top.navbar-dark {
