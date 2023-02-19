@@ -394,26 +394,6 @@ p{
     list-style: none;
 }
 
-/* #hero .btn a {
-    font-family: "Futura", sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 30px;
-    color: #fff;
-    border-width: 10px;
-    border-style: solid;
-    border-image: linear-gradient(to left, #0088CC, #5F66AE, #5F66AE) 1;
-    padding: 12px 36px;
-    display: inline-block;
-    border-radius: 5px;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-    transition: all .3s;
-    overflow: hidden;
-    background: linear-gradient(92.75deg, rgba(0, 136, 204, 0.84) 0%, rgba(95, 102, 174, 0.67) 51.56%, rgba(95, 102, 174, 0.87) 100%);
-
-} */
-
 #hero .btn a {
     font-family: "Futura", sans-serif;
     font-size: 12px;
@@ -469,6 +449,8 @@ p{
     }
 
     #hero .hero-img{
+        text-align: center;
+        padding-top: 48px;
         display: block;
     }
 }
