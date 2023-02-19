@@ -270,7 +270,7 @@ p{
 .navbar-dark .navbar-nav .nav-link {
     font-family: 'Futura', sans-serif;
     position: relative;
-    margin-left: 55px;
+    margin-left: 0px;
     padding: 20px 0;
     color: var(--dark);
     font-size: 18px;
@@ -666,8 +666,13 @@ p{
     padding-bottom: 140px;
 }
 
+.cta h1{
+    color: #FFFFFF;
+    font-size: 26px;
+    letter-spacing: 2.5px;
+}
+
 .cta p {
-    /* font-size: 32px; */
     margin-bottom: 24px;
     color: #FFFFFF;
     font-family: "Futura", sans-serif;
