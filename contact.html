@@ -100,28 +100,36 @@
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s" style="border-right: 3px solid white;">
-                    <form>
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form"> 
                         <div class="row g-3">
-                            <div class="col-12">
-                                <label for="yourName" class="form-label">Your Name</label>
-                                <input type="text" id="yourName" class="form-control border-0 bg-light px-4"
-                                    placeholder="Your Name" style="height: 55px;">
+                            <div class="form-group col-12">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" name="name" class="form-control border-0 bg-light px-4" id="name" placeholder="Your Name" style="height: 55px;" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                                <div class="validate"></div>
                             </div>
-                            <div class="col-12">
-                                <label for="email" class="form-label">Email address</label>
-                                <input type="email" id="email" class="form-control border-0 bg-light px-4"
-                                    placeholder="Your Email" style="height: 55px;">
+                            <div class="form-group col-12">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control border-0 bg-light px-4" name="email" id="email" placeholder="Your Email" style="height: 55px;" data-rule="email" data-msg="Please enter a valid email" />
+                                <div class="validate"></div>
                             </div>
-                            <div class="col-12">
+                            <div class="form-group col-12">
                                 <label for="subject" class="form-label">Subject</label>
-                                <input type="text" id="subject" class="form-control border-0 bg-light px-4"
-                                    placeholder="Subject" style="height: 55px;">
+                                <input type="text" class="form-control border-0 bg-light px-4" name="subject" id="subject" placeholder="Subject" style="height: 55px;" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                                <div class="validate"></div>
                             </div>
-                            <div class="col-12">
+                            <div class="form-group col-12">
                                 <label for="message" class="form-label">Message</label>
-                                <textarea id="message" class="form-control border-0 bg-light px-4 py-3" rows="4"
-                                    placeholder="Message"></textarea>
+                                <textarea class="form-control border-0 bg-light px-4 py-3" name="message" id="message" rows="10" placeholder="Message" data-rule="required" data-msg="Please write something for us"></textarea>
+                                <div class="validate"></div>
                             </div>
+                            <div class="mb-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                              </div>
+
+                              <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
+
                             <div class="col-12">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                             </div>
@@ -246,6 +254,7 @@
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/php-email-form/validate.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
