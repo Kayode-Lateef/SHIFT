@@ -380,9 +380,22 @@ p{
     color: #FFFFFF;
 }
 
-#hero h1 span {
+#hero h1 .text-span {
     color: var(--primary);
 }
+
+#hero h1 .text-slider-items .text-span{
+    color: var(--primary);
+}
+
+
+/* #hero .text-slider-items {
+    display: none;
+  } */
+
+  #hero .text-slider-items {
+    display: none;
+  }
 
 #hero li {
     font-size: 16px;
