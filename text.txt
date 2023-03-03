@@ -1,0 +1,230 @@
+contact.php
+
+<?php
+  /**
+  * Requires the "PHP Email Form" library
+  * The "PHP Email Form" library is available only in the pro version of the template
+  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
+  * For more info and help: https://bootstrapmade.com/php-email-form/
+  */
+
+  // Replace contact@example.com with your real receiving email address
+  $receiving_email_address = 'brandwithshift@gmail.com';
+  // $receiving_email_address = 'contact@example.com';
+
+  if( file_exists($php_email_form = '../lib/php-email-form/php-email-form.php' )) {
+    include( $php_email_form );
+  } else {
+    die( 'Unable to load the "PHP Email Form" Library!');
+  }
+
+  $contact = new PHP_Email_Form;
+  $contact->ajax = true;
+  
+  $contact->to = $receiving_email_address;
+  $contact->from_name = $_POST['name'];
+  $contact->from_email = $_POST['email'];
+  $contact->subject = $_POST['subject'];
+
+  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
+  /*
+  $contact->smtp = array(
+    'host' => 'example.com',
+    'username' => 'example',
+    'password' => 'pass',
+    'port' => '587'
+  );
+  */
+
+  $contact->add_message( $_POST['name'], 'From');
+  $contact->add_message( $_POST['email'], 'Email');
+  $contact->add_message( $_POST['message'], 'Message', 10);
+
+  echo $contact->send();
+?>
+
+
+
+------------------------
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
+  $to = 'brandwithshift@gmail.com';
+  $subject = 'New message from ' . $name;
+  $body = "<p>You have recieved a new message from the contact form on your website.</p>
+          <p><strong>Name: </strong> {$name} </p>
+          <p><strong>Email Address: </strong> {$email} </p>
+          <p><strong>Message: </strong> {$message} </p> ";
+  $headers = "From: $email\r\nReply-To: $email\r\n";
+  if (mail($to, $subject, $body, $headers)) {
+    echo 'Thank you for your message!';
+  } else {
+    echo 'There was a problem sending your message.';
+  }
+}
+
+
+
+
+<?php
+if(isset($_POST['submit'])) {
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $myemail = "branfwaa@brandwithshift.co";
+    $headers = "From:Contact Form <$myemail>\r\n";
+    $headers .= "Reply-To: $name <$email>\r\n";
+
+    $body = "<p>You have recieved a new message from the contact form on your website.</p>
+            <p><strong>Name: </strong> {$name} </p>
+            <p><strong>Email Address: </strong> {$email} </p>
+            <p><strong>Message: </strong> {$message} </p> ";
+  
+    mail($myemail, $subject, $message, $body, $headers);
+    } else {
+// echo "An error occurred during the submission of your message";
+echo "Thank you for your message!";
+echo "Your message has been sent successfully!"; 
+
+}
+?>
+
+
+=====================
+
+<?php
+if(isset($_POST['submit'])) {
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $myemail = "branfwaa@brandwithshift.co";
+    $headers = "From:Contact Form <$myemail>\r\n";
+    $headers .= "Reply-To: $name <$email>\r\n";
+
+    $body = "<p>You have recieved a new message from the contact form on your website.</p>
+            <p><strong>Name: </strong> $name </p>
+            <p><strong>Email Address: </strong> $email </p>
+            <p><strong>Message: </strong> $message </p> ";
+  
+    mail($myemail, $subject, $message, $body, $headers);
+    
+    } else {
+ echo "Thank you for your message!";
+
+
+}
+?>
+
+
+
+==================
+// PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\Exception;
+// Base files 
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+// create object of PHPMailer class with boolean parameter which sets/unsets exception.
+$mail = new PHPMailer(true);                              
+try {
+    $mail->isSMTP(); // using SMTP protocol                                     
+    $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail 
+    $mail->SMTPAuth = true;  // enable smtp authentication                             
+    $mail->Username = 'sender@gmail.com';  // sender gmail host              
+    $mail->Password = 'password'; // sender gmail host password                          
+    $mail->SMTPSecure = 'tls';  // for encrypted connection                           
+    $mail->Port = 587;   // port for SMTP     
+
+    $mail->setFrom('sender@gmail.com', "Sender"); // sender's email and name
+    $mail->addAddress('receiver@gmail.com', "Receiver");  // receiver's email and name
+
+    $mail->Subject = 'Test subject';
+    $mail->Body    = 'Test body';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) { // handle error.
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+
+
+
+
+
+
+<?php
+
+if(isset($_POST['submit'])){
+	
+
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+  $subject = $_POST['subject'];
+	$message = $_POST['message'];
+  
+    $mailTo = "branfwaa@brandwithshift.co";
+		$headers = "From: ".$email;
+		$emailbody = "You have recieved a new message from the contact form on your website. " .$name."\n\n".$message;
+    // $emailbody .= 'Name: $name' . "\n\n";
+    // $emailbody .= 'Email Address: $email' . "\n\n";
+    // $emailbody .=  'Message: $message';
+
+    mail($mailTo, $subject, $emailbody, $headers);
+
+     //redirect back to form
+      header("location: contact.php?mailsend");
+}
+
+ ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer; 
+use PHPMailer\PHPMailer\Exception;
+// Base files 
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+// create object of PHPMailer class with boolean parameter which sets/unsets exception.
+$mail = new PHPMailer(true);                              
+try {
+    $mail->isSMTP(); // using SMTP protocol                                     
+    $mail->Host = 'brandwithshift.co'; // SMTP host as gmail 
+    $mail->SMTPAuth = true;  // enable smtp authentication                             
+    $mail->Username = 'admin@brandwithshift.co';  // sender gmail host              
+    $mail->Password = 'admin@brandwithshift'; // sender gmail host password                          
+    $mail->SMTPSecure = 'tls';  // for encrypted connection                           
+    $mail->Port = 465;   // port for SMTP     
+
+    $mail->setFrom('brandwithshift@gmail.com', "Sender"); // sender's email and name
+    $mail->addAddress('brandwithshift@gmail.com', "Receiver");  // receiver's email and name
+
+    $mail->Subject = 'Test subject';
+    $mail->Body    = 'Test body';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) { // handle error.
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
